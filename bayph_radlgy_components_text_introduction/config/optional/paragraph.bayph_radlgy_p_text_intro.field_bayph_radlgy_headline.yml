@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bayph_radlgy_headline
+    - paragraphs.paragraphs_type.bayph_radlgy_p_text_intro
+  module:
+    - text
+id: paragraph.bayph_radlgy_p_text_intro.field_bayph_radlgy_headline
+field_name: field_bayph_radlgy_headline
+entity_type: paragraph
+bundle: bayph_radlgy_p_text_intro
+label: Headline
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

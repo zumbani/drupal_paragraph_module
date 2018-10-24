@@ -1,0 +1,60 @@
+ <?php
+/**
+ * @file
+ * Module for creating the text introduction
+ */
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\file\Entity\File;
+use Drupal\file\FileInterface;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Render\Element;
+use Drupal\paragraphs\Entity\Paragraph;
+
+/**
+ * Implements hook_theme().
+ *
+ * Call the base hook from Paragraphs to allow preprocess hooks to work.
+ */
+function bayph_radlgy_components_text_introduction_theme(){
+    return array(
+        'paragraph__bayph_radlgy_p_text_intro' => array(
+            'render element' => 'element',
+            'template' => 'paragraph--paragraph--bayph-radlgy-p-text-intro',
+            'base hook' => 'paragraph'
+        )
+
+    );
+}
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Attach CSS/JS libs, if config says so.
+ */
+function bayph_radlgy_components_text_introduction_page_attachments(array &$page){
+    $page['#attached']['library'][] = 'bayph_radlgy_components_text_introduction/assets';
+}
+
+/**
+ * Implements hook_uninstall().
+ *
+ * Uninstall configurations
+ */
+function bayph_radlgy_components_text_introduction_uninstall(){
+$files = [
+      'paragraphs.paragraphs_type.bayph_radlgy_p_text_intro',
+      'paragraph.bayph_radlgy_p_text_intro.field_bayph_radlgy_headline',
+      'paragraph.bayph_radlgy_p_text_intro.field_bayph_radlgy_body',
+      'paragraph.bayph_radlgy_p_text_intro.field_bayph_radlgy_bg_color',
+      'field.storage.paragraph.field_bayph_radlgy_headline',
+      'field.storage.paragraph.field_bayph_radlgy_body',
+      'field.storage.paragraph.field_bayph_radlgy_bg_color',
+      'core.entity_view_display.paragraph.bayph_radlgy_p_text_intro.default',
+      'core.entity_form_display.paragraph.bayph_radlgy_p_text_intro.default'
+  ];
+
+  foreach ($files as $file) {
+    \Drupal::configFactory()->getEditable($file)->delete();
+  }
+
+}

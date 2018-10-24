@@ -1,0 +1,9 @@
+name: Paragraph component for text introduction.
+type: module
+description: Paragraph component for text introduction.
+core: 8.x
+version: '0.1'
+package: Paragraphs
+dependencies:
+  - paragraphs
+  - text

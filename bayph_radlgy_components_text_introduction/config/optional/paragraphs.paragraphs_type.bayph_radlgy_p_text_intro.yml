@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: bayph_radlgy_p_text_intro
+label: 'Text Introduction'
+icon_uuid: null
+description: 'Paragraph to create text introductions'
+behavior_plugins: {  }

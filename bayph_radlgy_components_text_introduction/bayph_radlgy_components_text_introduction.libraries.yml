@@ -1,0 +1,7 @@
+assets:
+  version: 1.x
+  js:
+    js/javascript.js: {}   
+  css:
+    theme:
+      css/style.css: {}

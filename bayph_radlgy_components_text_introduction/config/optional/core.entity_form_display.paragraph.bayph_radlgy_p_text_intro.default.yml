@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bayph_radlgy_p_text_intro.field_bayph_radlgy_bg_color
+    - field.field.paragraph.bayph_radlgy_p_text_intro.field_bayph_radlgy_body
+    - field.field.paragraph.bayph_radlgy_p_text_intro.field_bayph_radlgy_headline
+    - paragraphs.paragraphs_type.bayph_radlgy_p_text_intro
+  module:
+    - content_moderation
+    - text
+id: paragraph.bayph_radlgy_p_text_intro.default
+targetEntityType: paragraph
+bundle: bayph_radlgy_p_text_intro
+mode: default
+content:
+  field_bayph_radlgy_bg_color:
+    weight: 103
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_bayph_radlgy_body:
+    weight: 102
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_bayph_radlgy_headline:
+    weight: 101
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true
